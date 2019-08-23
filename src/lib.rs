@@ -2,7 +2,7 @@ use std::sync::atomic::{AtomicBool, Ordering::SeqCst};
 
 static DEBUG: AtomicBool = AtomicBool::new(false);
 
-#[allow(unused_macros)]
+#[macro_export]
 macro_rules! trace {
     ($fmt:expr, $($args:expr),*) => {
         if DEBUG.load(SeqCst) {
